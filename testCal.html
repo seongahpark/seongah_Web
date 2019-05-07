@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            견습계산기
+        </title>
+        <style>
+            .cal_body
+            {
+                width:340px;
+                height:400px;
+                margin: 0 auto;
+                border: 2px solid #bcbcbc;
+                background-color: #bcbcbc;
+                padding: 30px;
+            }
+            .cal_result
+            {
+                width:inherit;
+                height:30px;
+                background-color: white;
+                margin: 0 auto;
+                padding: 5px;
+                margin-bottom: 10px;
+            }
+            .cal_result p
+            {
+                height: inherit;
+                text-align: right;
+                margin: 0 auto;
+                text-justify: auto;
+                padding: 5px;
+
+            }  
+            .cal_keypad
+            {
+                display:flex;
+                width:inherit;
+                height: 350px;
+                background-color: beige;
+                padding: 5px;
+            }
+            .cal_num
+            {
+                width: 75%;
+                height: inherit;
+            }
+            .cal_modi
+            {
+                width: 25%;
+                height: inherit;
+            }
+            .cal_row
+            {
+                height: 25%;
+            }
+            .cal_row input
+            {
+                width: 30%;
+                height: 100%;
+            }
+            .cal_operation
+            {
+                width: 100%;
+                height: 25%;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="cal_body">
+            <div class="cal_result">
+                <p class="input" id="result">0</p>
+            </div>
+            <div class="cal_keypad">
+                <div class="cal_num">
+                    <div class="cal_row">
+                        <input type="button" class="cal_button" value="9" onclick="getNumber(9)">
+                        <input type="button" class="cal_button" value="8" onclick="getNumber(8)">
+                        <input type="button" class="cal_button" value="7" onclick="getNumber(7)">
+                    </div>
+                    <div class="cal_row">
+                        <input type="button" class="cal_button" value="6" onclick="getNumber(6)">
+                        <input type="button" class="cal_button" value="5" onclick="getNumber(5)">
+                        <input type="button" class="cal_button" value="4" onclick="getNumber(4)">
+                    </div>
+                    <div class="cal_row">
+                        <input type="button" class="cal_button" value="3" onclick="getNumber(3)">
+                        <input type="button" class="cal_button" value="2" onclick="getNumber(2)">
+                        <input type="button" class="cal_button" value="1" onclick="getNumber(1)">
+                    </div>
+                    <div class="cal_row">
+                        <input type="button" class="cal_button" value="C" onclick="cls()">
+                        <input type="button" class="cal_button" value="0" onclick="getNumber(0)">
+                        <input type="button" class="cal_button" value="=" onclick="getResult()">
+                    </div>
+                </div>
+                <div class="cal_modi">
+                        <input type="button" class="cal_operation" value="+" onclick="getOp('+')">
+                        <input type="button" class="cal_operation" value="-" onclick="getOp('-')">
+                        <input type="button" class="cal_operation" value="*" onclick="getOp('*')">
+                        <input type="button" class="cal_operation" value="/" onclick="getOp('/')">
+        
+                </div>
+            </div>
+        </div>
+
+        <script>
+            var a=""; //첫 번째 값
+            var oper=""; //연산자
+            var b=""; //두 번째 값
+            var res=""; //연산한 결과값
+            var input_txt=""; //연산 할 과정
+
+            // 더하고 곱하고 나누고 빼고 (연산 결과)
+            function getResult()
+            {
+                if(a!="" && oper!="" && b!="")
+                {
+                    a=parseInt(a); //문자열 a를 숫자형 a로 바꿈
+                    b=parseInt(b); //마찬가지
+                    if(oper=="+") res=a+b;
+                    else if(oper=="-") res=a-b;
+                    else if(oper=="*") res=a*b;
+                    else if(oper=="/") res=a/b; 
+
+                    document.getElementById("result").innerText=res.toString();   
+                    b=oper=input_txt="";
+                    a=res;
+                    res="";
+                    input_txt+=a;                    
+                }
+
+            }
+            // 연산자를 받아야 됩니다
+            function getOp(op)
+            {
+                if(oper=="")
+                {
+                    oper+=op;
+                    input_txt+=oper;
+                    document.getElementById("result").innerText=input_txt;
+                }
+            }
+            // 초기화
+            function cls()
+            {
+                a=oper=b=res=input_txt="";
+                document.getElementById("result").innerText="0";
+            }
+            // a,b 두개의 값을 받기
+            function getNumber(num)
+            {
+                console.log(num)
+                if(oper=="") //연산자가 없으면 첫번째 값
+                {
+                    a+=num;
+                }
+                else if(a!="" && oper!="") //a에 값이 있고, oper도 값이 있을 때
+                {
+                    b+=num;
+                }
+                input_txt+=num;
+                document.getElementById("result").innerText=input_txt.toString();
+            }
+        </script>
+    </body>
+</html>

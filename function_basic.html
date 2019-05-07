@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Function Basic
+        </title>
+    </head>
+    <body>
+        <h2>함수(function)이해와 사칙연산</h2>
+        <h3 id="results"></h3>
+
+        <script>
+            function add(num1, num2){
+                return num1+num2;
+            }
+            function substract(num1, num2){
+                return num1-num2;
+            }
+            function multiply(num1, num2){
+                return num1*num2;
+            }
+            function divide(num1,num2){
+                return num1/num2;
+            }
+
+            var x=10, y=5;
+            var add_res=add(x,y);
+            var sub_res=substract(x,y);
+            var mul_res=multiply(x,y);
+            var div_res=divide(x,y);
+
+            var text="더한 값: "+add_res+", 뺀 값: "+sub_res+
+            ", 곱한 값 : "+mul_res+", 나눈 값 : "+div_res;
+
+            document.getElementById("results").innerHTML=text;
+        </script>
+    </body>
+</html>

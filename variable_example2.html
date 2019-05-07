@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Variable Example
+        </title>
+    </head>
+    <body>
+        <h1>What is your car?</h1>
+        <h2>User Information</h2>
+        <div>
+            <p id="fullname"></p>
+            <p id="age"></p>
+        </div>
+        
+        <script>
+            //parameter : 매개변수/ 인자
+            var Person={
+                firstName: "Seong-ah",
+                lastName: "Park",
+                age: 22,
+                fullName: function(department, grade){
+                    return "My full name is "+this.firstName+" "+this.lastName+"의 전공은? "+department +
+                    " 학년은? "+grade;
+                }
+            }
+
+            document.getElementById('fullname').innerHTML="이름 : "+Person.fullName("컴퓨터공학과",6);
+            document.getElementById('age').innerHTML="나이 : "+Person.age;
+        </script>
+    </body>
+</html>

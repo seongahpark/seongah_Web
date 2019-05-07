@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Click Event 1</title>
+    </head>
+    <body>
+        <h2>버튼 클릭 이벤트 기초</h2>
+        <h1 onclick="this.innerHTML='Seong-ah'">What's your name?</h1>
+        <button onclick="alert('hello world!')">Hello world!</button>
+
+        <h2>버튼 클릭 이벤트1</h2>
+        <button onclick="this.innerHTML=Date()">몇시 일까요?</button>
+
+        <h2>버튼 클릭 이벤트2</h2>
+        <button onclick="document.getElementById('demo').innerHTML=Date()"> 몇시 일까요?</button>
+        <h3 id="demo"></h3>
+
+        <h2>버튼 클릭 이벤트3</h2>
+        <h1 onclick="changeText(this)">What's your name?</h1>
+        <script>
+        function changeText(id) {
+            id.innerHTML="Seong-ah";
+        }
+        </script>
+
+        <h2>버튼 클릭 이벤트4</h2>
+        <button onclick="displayDate()">몇시 일까요?</button>
+        <h3 id="demo2"></h3>
+        <script>
+            function displayDate() {
+                document.getElementById("demo2").innerHTML = Date();
+            }
+            </script>
+    </body>
+</html>

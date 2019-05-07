@@ -1,0 +1,95 @@
+.container
+{
+    width:430px;
+    height:480px;
+    margin: 0 auto;
+    border: 2px solid #bcbcbc;
+    background-color: peachpuff;
+    padding: 10px;
+}
+
+.name
+{
+    width:415px;
+    height:30px;
+    background-color: rgb(241, 163, 139);
+    border: 2px solid #bcbcbc;
+    margin: 0 auto;
+    padding: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.input
+{
+    width:60%;
+    height:15px;
+    margin: 0 auto;
+}
+
+.btn
+{
+    width: 10%;
+    height: 21px;
+    margin: 0 auto;
+    margin-left: 7px;
+}
+
+.lili
+{
+    width:inherit;
+    height: 20px;
+    margin: 0 auto;
+}
+.list
+{
+    width:415px;
+    height: 350px;
+    background-color:rgb(247, 207, 214);
+    border: 2px solid #bcbcbc;
+    padding: 5px;
+}
+
+.context
+{
+    width: inherit;
+    height:250px;
+}
+
+li
+{
+    font-size: 100%;
+    list-style: none;
+}
+
+p
+{
+    float: left;
+    margin: 0;
+    margin-right: 5px;
+    height: inherit;
+    width: 60px;
+    font-size: 100%;
+    padding: 3px;
+}
+
+span
+{
+    margin-right: 5px;
+    width: 90px;
+    height: 25px;
+    float: left;
+    border-bottom : solid 2px black;
+}
+
+#in
+{
+    margin-left: 5px;
+    width: 130px;
+}
+
+#out
+{
+    text-align: center;
+    margin-left: 10px;
+}

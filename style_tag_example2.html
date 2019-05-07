@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Style Tag Example2
+        </title>
+        <!-- 헤드에다가 style 해라, css 방식으로 써야된다 마진 0px auto가 가운데 정렬-->
+        <style> 
+        #div_container{
+            width: 900px;
+            margin: 0px auto;
+            padding: 20px;
+            border: 1px solid gold;
+        }
+        #div_contents
+        {
+            width: 850px;
+            margin: 0px auto;
+            padding: 20px;
+            background-color: aquamarine;
+            color:burlywood; 
+        }
+        #highlight_item
+        {
+            background-color: aqua;
+        }
+        li{
+            list-style: none;
+        }
+        body{
+            color:crimson;
+        }
+        </style>
+        <!-- 태그 안의 내용물들을 다 적용할 수 있다 이건 #쓰면 안됨-->
+    </head>
+    <body>
+<div id="div_container">
+    <h1 style="text-align: center"> 코딩은 재미떠! </h1>
+    <div id="div_contents">
+        <ul>
+            <li> 방가워</li>
+            <li id="highlight_item"> 박성아</li>
+            <li > 뀰뀰이</li>
+            <li  id="highlight_item"> 뿡뿡이</li>
+        </ul>
+    </div>
+
+</div>
+    </body>
+</html>
